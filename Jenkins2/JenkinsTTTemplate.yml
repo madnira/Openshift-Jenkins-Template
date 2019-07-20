@@ -1,0 +1,302 @@
+apiVersion: v1
+kind: Template
+labels:
+  app: jenkinssas-persistent
+  template: jenkinssas-persistent-template
+message: A Jenkins SAS service has been created in your project.  Log into Jenkins with
+  your OpenShift account.
+metadata:
+  annotations:
+    description: |-
+      Jenkins service, with persistent storage.
+
+      NOTE: You must have persistent volumes available in your cluster to use this template.
+    iconClass: icon-jenkins
+    openshift.io/display-name: Jenkins SAS
+    openshift.io/documentation-url: https://docs.openshift.org/latest/using_images/other_images/jenkins.html
+    openshift.io/long-description: This template deploys a Jenkins server capable
+      of managing OpenShift Pipeline builds and supporting OpenShift-based oauth login for Cross banner.
+    openshift.io/provider-display-name: Red Hat, Inc.
+    openshift.io/support-url: https://access.redhat.com
+    tags: instant-app,jenkins
+  creationTimestamp: null
+  name: jenkinssas-persistent
+objects:
+- apiVersion: v1
+  data:
+    ssh-privatekey: >-
+      LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQ0KTUlJRW93SUJBQUtDQVFFQXZTa1dQY3pUZytrMWRsU2xNeHU1emxtUnNUZitNUm9SK2twdFoyeEpvWVBxUE0xUA0KWFFaQk1rOVFWL3hoZkpIbG5pYUl0RU4rano1clVFN1YrSkZ5aGpZR2tPTzVuWkRtSUlrQ01BL01VYzg4S3Q4Mg0KOExvUGJCTGxzUlJKdHZpeElyWGFEYnl0Y3F2cnZwVU9INnRlNUVrWVZ3VU8remN5R3ZGTE9XNXVJaVNHZE5sbQ0Ka3B4NXRZNmx6VktvRVNma0lGMm1nL0hUb0FHVS9uaEVIQ0RHRDAvcEVwRjRkZG9XTGRwWWxDUkhSYVNTY0o2Sg0KTVpKWUh6cUJZYkJZUHBsNWhNb2J2VXNHR0pTb1oxODJOTlE5bm1LbitFbVYvck8xeTFSeURmTDZ4SC9lWmhYSQ0KQlliUGxTU1d0U1NCUFRlYVRtUVlPNmVRSGVvUHRPaW1LVFgrRFFJREFRQUJBb0lCQUJlVXlhc0duOCt3QVBReA0KZFM2NzVCdnZXcFJITUs4YVd1ZGk0K1Npd1VNYldOWWZtaWMwb21nTkx5em96NVpoOGNnWGNhOVhRcTNFMEVnQQ0KcS9nQzJjNFZhaGdoNjMvVEVuMDMxMGY2a0RRYXE1dUVuQ3JDWnkzSDVVNkFBdmlHWkQ2NWdPZDVmLzN0cE1Qcg0KZlFsQnFlQzNwQXNsSEVzQkJJUUxWSjlpUHVTT2hkTUYwWktNWkJKSlpJcEsyd0lQcEpMaGZaWUcvbWpjRW5waQ0Kb0FRcVc4MjRzVzRWWWIrd1hVOWJFbWgraTNUa2lxYzBMQURnL1dlN3lDd29GRHVDdmNNcktyWW5Bek1OaWYvZg0KREpLWmpOZmFaRjlvazRMZk1MNjZxRkRnQ1ZRQ1hoUlVYNGJqSFRhNFRPTDUwNnA5MHoxQXpBS21nTnlUNXFZMw0KQU1YK081a0NnWUVBK1F0MGxYSTJIU0liYmJWN2J1NmF3ZlU0TEo2cTBGbzFyK1JXTzhUdTcxZDl3K0N0eG9yWg0KaG95U2s3RDNLYjdoeWJ1bW5IUHlBNUlkRHlya0UvZ1RpZjZxaHJ4dlkwczdVTzRTVUcxRWo1VENtUXR4NDJvTQ0KSjFKaU1vT3UwaWh3UEdTQ2R0Q2NWNHIyZmd0Zmk0Q0hkNW1LelBaVjk4SCtUZmFCZUNnT2k3TUNnWUVBd25GOQ0KUFNlN3NrajBTamJSV3JKS3YzTVdhODl6WGtXSDI1LzFObEI2T0xxUURvd2JPVythMGJEdmVoTTJoR0g1Z2ZaZQ0KU1hUMmJYaDF2NnlMTkc3cDZoTVpFWHZpYktlWmV5YUxuVmlTWkZ1K29pT2x5T2hyaUVWVGloRStJdGU3Rnl5Tg0KUGkzQWFsSVRhWGNjYkx2enMwK2piQ0JVRGZRZVNxdWRDeUUxYno4Q2dZRUF5dUtvTVc5LzRpLzlCRjFLbDA3Tw0KeUtBTENWNmhiV2R3UVVEVmQ0K3h6MDRKYU4vSzhlbi8xL3NCRmt5ZXJtV1E3NVZ0NEJzYzJBZmFvSmFpaEJvZg0KWU5ZVStmcmRDNWtvVTMvL2I0SDB6cnV6NUpaTVM2WURESzJ5emRBMVJZUW9HeXNPbGRqUTVRaVNVcERWWDRKdg0KMmVFK0VFZkdOVGJYQTVDRVhPelZITDBDZ1lCWWtsUEhNTHM2S2l0RlJ4VTBhRFRPWXNGYTJNT250S3AvSzYwSw0KVWJ4cTdPakVCNlE3RkpDRVprR2Y3UEtQZVFXcjRxcnVjUjN6bmNTZFRCNlpBdEVBdERSZUYzMTdteGk1MVVRUg0KcDQvL3NSNzBRcUs1RXM0dzQ4dDdBQUc2NDJRdzJUVjVsbU9veXJ4VzlVLzRZK0ZOMDhBUWQrVngrYnAycnhlNQ0KUXlaUkJ3S0JnQ0p5RzlPb0U2dEc1L3pKRllnSmFreDllNHB3TjFZV2tQekhDMGFYTUxzd2xWYXlSN203N051eg0KSjI2V3hWalVxVndHaFpCZ0FvTUVaOUVpZVBQYUF5TFd5K3FkK3ZGTzA4dUhTWFZQZjZvc2xpa1dBS1lTcDl0Uw0KUEhZZ0ZYbHIwK1JYSlVUMjhOcGsrOVh6REd3VmJhOFBUMnVjdzZkbXdYMDZUSUNlQ2lNMQ0KLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0=
+  kind: Secret
+  metadata:
+    name: bitbucketssh
+  type: kubernetes.io/ssh-auth
+- apiVersion: v1
+  data:
+    ssh-privatekey: >-
+      LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQ0KTUlJRW93SUJBQUtDQVFFQXZTa1dQY3pUZytrMWRsU2xNeHU1emxtUnNUZitNUm9SK2twdFoyeEpvWVBxUE0xUA0KWFFaQk1rOVFWL3hoZkpIbG5pYUl0RU4rano1clVFN1YrSkZ5aGpZR2tPTzVuWkRtSUlrQ01BL01VYzg4S3Q4Mg0KOExvUGJCTGxzUlJKdHZpeElyWGFEYnl0Y3F2cnZwVU9INnRlNUVrWVZ3VU8remN5R3ZGTE9XNXVJaVNHZE5sbQ0Ka3B4NXRZNmx6VktvRVNma0lGMm1nL0hUb0FHVS9uaEVIQ0RHRDAvcEVwRjRkZG9XTGRwWWxDUkhSYVNTY0o2Sg0KTVpKWUh6cUJZYkJZUHBsNWhNb2J2VXNHR0pTb1oxODJOTlE5bm1LbitFbVYvck8xeTFSeURmTDZ4SC9lWmhYSQ0KQlliUGxTU1d0U1NCUFRlYVRtUVlPNmVRSGVvUHRPaW1LVFgrRFFJREFRQUJBb0lCQUJlVXlhc0duOCt3QVBReA0KZFM2NzVCdnZXcFJITUs4YVd1ZGk0K1Npd1VNYldOWWZtaWMwb21nTkx5em96NVpoOGNnWGNhOVhRcTNFMEVnQQ0KcS9nQzJjNFZhaGdoNjMvVEVuMDMxMGY2a0RRYXE1dUVuQ3JDWnkzSDVVNkFBdmlHWkQ2NWdPZDVmLzN0cE1Qcg0KZlFsQnFlQzNwQXNsSEVzQkJJUUxWSjlpUHVTT2hkTUYwWktNWkJKSlpJcEsyd0lQcEpMaGZaWUcvbWpjRW5waQ0Kb0FRcVc4MjRzVzRWWWIrd1hVOWJFbWgraTNUa2lxYzBMQURnL1dlN3lDd29GRHVDdmNNcktyWW5Bek1OaWYvZg0KREpLWmpOZmFaRjlvazRMZk1MNjZxRkRnQ1ZRQ1hoUlVYNGJqSFRhNFRPTDUwNnA5MHoxQXpBS21nTnlUNXFZMw0KQU1YK081a0NnWUVBK1F0MGxYSTJIU0liYmJWN2J1NmF3ZlU0TEo2cTBGbzFyK1JXTzhUdTcxZDl3K0N0eG9yWg0KaG95U2s3RDNLYjdoeWJ1bW5IUHlBNUlkRHlya0UvZ1RpZjZxaHJ4dlkwczdVTzRTVUcxRWo1VENtUXR4NDJvTQ0KSjFKaU1vT3UwaWh3UEdTQ2R0Q2NWNHIyZmd0Zmk0Q0hkNW1LelBaVjk4SCtUZmFCZUNnT2k3TUNnWUVBd25GOQ0KUFNlN3NrajBTamJSV3JKS3YzTVdhODl6WGtXSDI1LzFObEI2T0xxUURvd2JPVythMGJEdmVoTTJoR0g1Z2ZaZQ0KU1hUMmJYaDF2NnlMTkc3cDZoTVpFWHZpYktlWmV5YUxuVmlTWkZ1K29pT2x5T2hyaUVWVGloRStJdGU3Rnl5Tg0KUGkzQWFsSVRhWGNjYkx2enMwK2piQ0JVRGZRZVNxdWRDeUUxYno4Q2dZRUF5dUtvTVc5LzRpLzlCRjFLbDA3Tw0KeUtBTENWNmhiV2R3UVVEVmQ0K3h6MDRKYU4vSzhlbi8xL3NCRmt5ZXJtV1E3NVZ0NEJzYzJBZmFvSmFpaEJvZg0KWU5ZVStmcmRDNWtvVTMvL2I0SDB6cnV6NUpaTVM2WURESzJ5emRBMVJZUW9HeXNPbGRqUTVRaVNVcERWWDRKdg0KMmVFK0VFZkdOVGJYQTVDRVhPelZITDBDZ1lCWWtsUEhNTHM2S2l0RlJ4VTBhRFRPWXNGYTJNT250S3AvSzYwSw0KVWJ4cTdPakVCNlE3RkpDRVprR2Y3UEtQZVFXcjRxcnVjUjN6bmNTZFRCNlpBdEVBdERSZUYzMTdteGk1MVVRUg0KcDQvL3NSNzBRcUs1RXM0dzQ4dDdBQUc2NDJRdzJUVjVsbU9veXJ4VzlVLzRZK0ZOMDhBUWQrVngrYnAycnhlNQ0KUXlaUkJ3S0JnQ0p5RzlPb0U2dEc1L3pKRllnSmFreDllNHB3TjFZV2tQekhDMGFYTUxzd2xWYXlSN203N051eg0KSjI2V3hWalVxVndHaFpCZ0FvTUVaOUVpZVBQYUF5TFd5K3FkK3ZGTzA4dUhTWFZQZjZvc2xpa1dBS1lTcDl0Uw0KUEhZZ0ZYbHIwK1JYSlVUMjhOcGsrOVh6REd3VmJhOFBUMnVjdzZkbXdYMDZUSUNlQ2lNMQ0KLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0=
+  kind: Secret
+  metadata:
+    name: jenkinssas-keys
+  type: kubernetes.io/ssh-auth
+- apiVersion: v1
+  kind: Secret
+  metadata:
+    name: jenkinssas-secret
+  type: Opaque 
+  data:
+    sonar.username: YWRtaW4=
+    sonar.password: YWRtaW4=
+    nexus.username: YWRtaW4=
+    nexus.password: YWRtaW4xMjM=
+- apiVersion: v1
+  kind: Route
+  metadata:
+    annotations:
+      haproxy.router.openshift.io/timeout: 4m
+      template.openshift.io/expose-uri: http://{.spec.host}{.spec.path}
+    name: ${JENKINS_SERVICE_NAME}
+  spec:
+    tls:
+      insecureEdgeTerminationPolicy: Redirect
+      termination: edge
+    to:
+      kind: Service
+      name: ${JENKINS_SERVICE_NAME}
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: ${JENKINS_SERVICE_NAME}-data
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: ${VOLUME_CAPACITY}
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    annotations:
+      template.alpha.openshift.io/wait-for-ready: "true"
+    name: ${JENKINS_SERVICE_NAME}
+  spec:
+    replicas: 1
+    selector:
+      name: ${JENKINS_SERVICE_NAME}
+    strategy:
+      type: Recreate
+    template:
+      metadata:
+        labels:
+          name: ${JENKINS_SERVICE_NAME}
+      spec:
+        containers:
+        - capabilities: {}
+          env:
+          - name: OPENSHIFT_ENABLE_OAUTH
+            value: ${ENABLE_OAUTH}
+          - name: OPENSHIFT_ENABLE_REDIRECT_PROMPT
+            value: "true"
+          - name: KUBERNETES_MASTER
+            value: https://kubernetes.default:443
+          - name: KUBERNETES_TRUST_CERTIFICATES
+            value: "true"
+          - name: JENKINS_SERVICE_NAME
+            value: ${JENKINS_SERVICE_NAME}
+          - name: JNLP_SERVICE_NAME
+            value: ${JNLP_SERVICE_NAME}
+          - name: SONAR_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: jenkinssas-secret
+                key: sonar.username 
+          - name: SONAR_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: jenkinssas-secret
+                key: sonar.password 
+          - name: NEXUS_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: jenkinssas-secret
+                key: nexus.username 
+          - name: NEXUS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: jenkinssas-secret
+                key: nexus.password 
+          imagePullPolicy: IfNotPresent
+          image: " "
+          imagePullPolicy: "IfNotPresent"
+          livenessProbe:
+            failureThreshold: 2
+            httpGet:
+              path: /login
+              port: 8080
+            initialDelaySeconds: 420
+            periodSeconds: 360
+            timeoutSeconds: 240
+          name: jenkins
+          readinessProbe:
+            httpGet:
+              path: /login
+              port: 8080
+            initialDelaySeconds: 3
+            timeoutSeconds: 240
+          resources:
+            limits:
+              memory: ${MEMORY_LIMIT}
+          securityContext:
+            capabilities: {}
+            privileged: false
+          terminationMessagePath: /dev/termination-log
+          volumeMounts:
+          - mountPath: /var/lib/jenkins
+            name: ${JENKINS_SERVICE_NAME}-data
+          - mountPath: /var/lib/jenkins/user-keys
+            name: ssh-keys
+            readOnly: true
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        serviceAccountName: ${JENKINS_SERVICE_NAME}
+        volumes:
+        - name: ${JENKINS_SERVICE_NAME}-data
+          persistentVolumeClaim:
+            claimName: ${JENKINS_SERVICE_NAME}-data
+        - name: ssh-keys
+          secret:
+            secretName: "jenkinssas-keys"
+    triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - jenkins
+        from:
+          kind: ImageStreamTag
+          name: ${JENKINS_IMAGE_STREAM_TAG}
+          namespace: ${NAMESPACE}
+        lastTriggeredImage: ""
+      type: ImageChange
+    - type: ConfigChange
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    annotations:
+      serviceaccounts.openshift.io/oauth-redirectreference.jenkins: '{"kind":"OAuthRedirectReference","apiVersion":"v1","reference":{"kind":"Route","name":"${JENKINS_SERVICE_NAME}"}}'
+    name: ${JENKINS_SERVICE_NAME}
+- apiVersion: v1
+  groupNames: null
+  kind: RoleBinding
+  metadata:
+    name: ${JENKINS_SERVICE_NAME}_edit
+  roleRef:
+    name: edit
+  subjects:
+  - kind: ServiceAccount
+    name: ${JENKINS_SERVICE_NAME}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: ${JNLP_SERVICE_NAME}
+  spec:
+    ports:
+    - name: agent
+      nodePort: 0
+      port: 50000
+      protocol: TCP
+      targetPort: 50000
+    selector:
+      name: ${JENKINS_SERVICE_NAME}
+    sessionAffinity: None
+    type: ClusterIP
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      service.alpha.openshift.io/dependencies: '[{"name": "${JNLP_SERVICE_NAME}",
+        "namespace": "", "kind": "Service"}]'
+      service.openshift.io/infrastructure: "true"
+    name: ${JENKINS_SERVICE_NAME}
+  spec:
+    ports:
+    - name: web
+      nodePort: 0
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      name: ${JENKINS_SERVICE_NAME}
+    sessionAffinity: None
+    type: ClusterIP
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    labels:
+      app: jenkins
+    name: ${JENKINS_SERVICE_NAME}
+  spec:
+    failedBuildsHistoryLimit: 5
+    nodeSelector: null
+    output:
+      to:
+        kind: ImageStreamTag
+        name: jenkinssas:latest
+    postCommit: {}
+    resources: {}
+    runPolicy: Serial
+    source:
+      type: "Git"
+      git:
+        uri: "ssh://git@bitbucket-lan.ah.nl:7999/tt/arin_templates.git"
+      contextDir: "SAS"
+      sourceSecret:
+        name: "bitbucketssh"      
+    strategy:
+      type: Docker
+      dockerStrategy:
+        noCache: false
+    successfulBuildsHistoryLimit: 5
+    triggers:
+    - type: ConfigChange
+    - imageChange: {}
+      type: ImageChange
+      
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    labels:
+      app: jenkins
+    name: jenkinssas
+  spec:
+    lookupPolicy:
+      local: false
+parameters:
+- description: The name of the OpenShift Service exposed for the Jenkins container.
+  displayName: Jenkins Service Name
+  name: JENKINS_SERVICE_NAME
+  value: jenkinssas
+- description: The name of the service used for master/slave communication.
+  displayName: Jenkins JNLP Service Name
+  name: JNLP_SERVICE_NAME
+  value: jenkinssas-jnlp
+- description: Whether to enable OAuth OpenShift integration. If false, the static
+    account 'admin' will be initialized with the password 'password'.
+  displayName: Enable OAuth in Jenkins
+  name: ENABLE_OAUTH
+  value: "true"
+- description: Maximum amount of memory the container can use.
+  displayName: Memory Limit
+  name: MEMORY_LIMIT
+  value: 4Gi
+- description: Volume space available for data, e.g. 512Mi, 2Gi.
+  displayName: Volume Capacity
+  name: VOLUME_CAPACITY
+  required: true
+  value: 10Gi
+- description: The OpenShift Namespace where the Jenkins ImageStream resides.
+  displayName: Jenkins ImageStream Namespace
+  name: NAMESPACE
+  value: ahit-automationcop-dev
+- description: Name of the ImageStreamTag to be used for the Jenkins image.
+  displayName: Jenkins ImageStreamTag
+  name: JENKINS_IMAGE_STREAM_TAG
+  value: jenkinssas:latest
