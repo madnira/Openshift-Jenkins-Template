@@ -10,7 +10,7 @@ FROM openshift/origin
 # Environment:
 # * $JENKINS_PASSWORD - Password for the Jenkins 'admin' user.
 
-MAINTAINER Transformation Team 
+MAINTAINER Arindam Bhattacharya
 
 # Jenkins LTS packages from
 # https://pkg.jenkins.io/redhat-stable/
