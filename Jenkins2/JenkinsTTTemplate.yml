@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Template
 labels:
-  app: jenkinssas-persistent
-  template: jenkinssas-persistent-template
+  app: jenkins2-persistent
+  template: jenkins2-persistent-template
 message: A Jenkins SAS service has been created in your project.  Log into Jenkins with
   your OpenShift account.
 metadata:
@@ -20,7 +20,7 @@ metadata:
     openshift.io/support-url: https://access.redhat.com
     tags: instant-app,jenkins
   creationTimestamp: null
-  name: jenkinssas-persistent
+  name: jenkins2-persistent
 objects:
 - apiVersion: v1
   data:
@@ -36,12 +36,12 @@ objects:
       LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQ0KTUlJRW93SUJBQUtDQVFFQXZTa1dQY3pUZytrMWRsU2xNeHU1emxtUnNUZitNUm9SK2twdFoyeEpvWVBxUE0xUA0KWFFaQk1rOVFWL3hoZkpIbG5pYUl0RU4rano1clVFN1YrSkZ5aGpZR2tPTzVuWkRtSUlrQ01BL01VYzg4S3Q4Mg0KOExvUGJCTGxzUlJKdHZpeElyWGFEYnl0Y3F2cnZwVU9INnRlNUVrWVZ3VU8remN5R3ZGTE9XNXVJaVNHZE5sbQ0Ka3B4NXRZNmx6VktvRVNma0lGMm1nL0hUb0FHVS9uaEVIQ0RHRDAvcEVwRjRkZG9XTGRwWWxDUkhSYVNTY0o2Sg0KTVpKWUh6cUJZYkJZUHBsNWhNb2J2VXNHR0pTb1oxODJOTlE5bm1LbitFbVYvck8xeTFSeURmTDZ4SC9lWmhYSQ0KQlliUGxTU1d0U1NCUFRlYVRtUVlPNmVRSGVvUHRPaW1LVFgrRFFJREFRQUJBb0lCQUJlVXlhc0duOCt3QVBReA0KZFM2NzVCdnZXcFJITUs4YVd1ZGk0K1Npd1VNYldOWWZtaWMwb21nTkx5em96NVpoOGNnWGNhOVhRcTNFMEVnQQ0KcS9nQzJjNFZhaGdoNjMvVEVuMDMxMGY2a0RRYXE1dUVuQ3JDWnkzSDVVNkFBdmlHWkQ2NWdPZDVmLzN0cE1Qcg0KZlFsQnFlQzNwQXNsSEVzQkJJUUxWSjlpUHVTT2hkTUYwWktNWkJKSlpJcEsyd0lQcEpMaGZaWUcvbWpjRW5waQ0Kb0FRcVc4MjRzVzRWWWIrd1hVOWJFbWgraTNUa2lxYzBMQURnL1dlN3lDd29GRHVDdmNNcktyWW5Bek1OaWYvZg0KREpLWmpOZmFaRjlvazRMZk1MNjZxRkRnQ1ZRQ1hoUlVYNGJqSFRhNFRPTDUwNnA5MHoxQXpBS21nTnlUNXFZMw0KQU1YK081a0NnWUVBK1F0MGxYSTJIU0liYmJWN2J1NmF3ZlU0TEo2cTBGbzFyK1JXTzhUdTcxZDl3K0N0eG9yWg0KaG95U2s3RDNLYjdoeWJ1bW5IUHlBNUlkRHlya0UvZ1RpZjZxaHJ4dlkwczdVTzRTVUcxRWo1VENtUXR4NDJvTQ0KSjFKaU1vT3UwaWh3UEdTQ2R0Q2NWNHIyZmd0Zmk0Q0hkNW1LelBaVjk4SCtUZmFCZUNnT2k3TUNnWUVBd25GOQ0KUFNlN3NrajBTamJSV3JKS3YzTVdhODl6WGtXSDI1LzFObEI2T0xxUURvd2JPVythMGJEdmVoTTJoR0g1Z2ZaZQ0KU1hUMmJYaDF2NnlMTkc3cDZoTVpFWHZpYktlWmV5YUxuVmlTWkZ1K29pT2x5T2hyaUVWVGloRStJdGU3Rnl5Tg0KUGkzQWFsSVRhWGNjYkx2enMwK2piQ0JVRGZRZVNxdWRDeUUxYno4Q2dZRUF5dUtvTVc5LzRpLzlCRjFLbDA3Tw0KeUtBTENWNmhiV2R3UVVEVmQ0K3h6MDRKYU4vSzhlbi8xL3NCRmt5ZXJtV1E3NVZ0NEJzYzJBZmFvSmFpaEJvZg0KWU5ZVStmcmRDNWtvVTMvL2I0SDB6cnV6NUpaTVM2WURESzJ5emRBMVJZUW9HeXNPbGRqUTVRaVNVcERWWDRKdg0KMmVFK0VFZkdOVGJYQTVDRVhPelZITDBDZ1lCWWtsUEhNTHM2S2l0RlJ4VTBhRFRPWXNGYTJNT250S3AvSzYwSw0KVWJ4cTdPakVCNlE3RkpDRVprR2Y3UEtQZVFXcjRxcnVjUjN6bmNTZFRCNlpBdEVBdERSZUYzMTdteGk1MVVRUg0KcDQvL3NSNzBRcUs1RXM0dzQ4dDdBQUc2NDJRdzJUVjVsbU9veXJ4VzlVLzRZK0ZOMDhBUWQrVngrYnAycnhlNQ0KUXlaUkJ3S0JnQ0p5RzlPb0U2dEc1L3pKRllnSmFreDllNHB3TjFZV2tQekhDMGFYTUxzd2xWYXlSN203N051eg0KSjI2V3hWalVxVndHaFpCZ0FvTUVaOUVpZVBQYUF5TFd5K3FkK3ZGTzA4dUhTWFZQZjZvc2xpa1dBS1lTcDl0Uw0KUEhZZ0ZYbHIwK1JYSlVUMjhOcGsrOVh6REd3VmJhOFBUMnVjdzZkbXdYMDZUSUNlQ2lNMQ0KLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0=
   kind: Secret
   metadata:
-    name: jenkinssas-keys
+    name: jenkins2-keys
   type: kubernetes.io/ssh-auth
 - apiVersion: v1
   kind: Secret
   metadata:
-    name: jenkinssas-secret
+    name: jenkins2-secret
   type: Opaque 
   data:
     sonar.username: YWRtaW4=
@@ -107,22 +107,22 @@ objects:
           - name: SONAR_USERNAME
             valueFrom:
               secretKeyRef:
-                name: jenkinssas-secret
+                name: jenkins2-secret
                 key: sonar.username 
           - name: SONAR_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: jenkinssas-secret
+                name: jenkins2-secret
                 key: sonar.password 
           - name: NEXUS_USERNAME
             valueFrom:
               secretKeyRef:
-                name: jenkinssas-secret
+                name: jenkins2-secret
                 key: nexus.username 
           - name: NEXUS_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: jenkinssas-secret
+                name: jenkins2-secret
                 key: nexus.password 
           imagePullPolicy: IfNotPresent
           image: " "
@@ -164,7 +164,7 @@ objects:
             claimName: ${JENKINS_SERVICE_NAME}-data
         - name: ssh-keys
           secret:
-            secretName: "jenkinssas-keys"
+            secretName: "jenkins2-keys"
     triggers:
     - imageChangeParams:
         automatic: true
@@ -239,7 +239,7 @@ objects:
     output:
       to:
         kind: ImageStreamTag
-        name: jenkinssas:latest
+        name: jenkins2:latest
     postCommit: {}
     resources: {}
     runPolicy: Serial
@@ -265,7 +265,7 @@ objects:
   metadata:
     labels:
       app: jenkins
-    name: jenkinssas
+    name: jenkins2
   spec:
     lookupPolicy:
       local: false
@@ -273,11 +273,11 @@ parameters:
 - description: The name of the OpenShift Service exposed for the Jenkins container.
   displayName: Jenkins Service Name
   name: JENKINS_SERVICE_NAME
-  value: jenkinssas
+  value: jenkins2
 - description: The name of the service used for master/slave communication.
   displayName: Jenkins JNLP Service Name
   name: JNLP_SERVICE_NAME
-  value: jenkinssas-jnlp
+  value: jenkins2-jnlp
 - description: Whether to enable OAuth OpenShift integration. If false, the static
     account 'admin' will be initialized with the password 'password'.
   displayName: Enable OAuth in Jenkins
@@ -295,8 +295,8 @@ parameters:
 - description: The OpenShift Namespace where the Jenkins ImageStream resides.
   displayName: Jenkins ImageStream Namespace
   name: NAMESPACE
-  value: ahit-automationcop-dev
+  value: <name of the openshift namespace>
 - description: Name of the ImageStreamTag to be used for the Jenkins image.
   displayName: Jenkins ImageStreamTag
   name: JENKINS_IMAGE_STREAM_TAG
-  value: jenkinssas:latest
+  value: jenkins2:latest
