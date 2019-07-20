@@ -3,7 +3,7 @@ kind: Template
 labels:
   app: jenkins2-persistent
   template: jenkins2-persistent-template
-message: A Jenkins SAS service has been created in your project.  Log into Jenkins with
+message: A Jenkins2 service has been created in your project.  Log into Jenkins with
   your OpenShift account.
 metadata:
   annotations:
